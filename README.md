@@ -1,2 +1,2 @@
 # hindiWhisper
-Improving HindiSpeechRecognition for Whisper
+Improving HindiSpeechRecognition for Whisper using a LM
