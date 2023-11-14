@@ -119,7 +119,7 @@ class DecodingOptions:
     lm_path: str = None
     lm_alpha: float = 2.0
     lm_beta: float = 2.5
-    nbest: bool = False
+    return_nbest: bool = False
 
 @dataclass(frozen=True)
 class DecodingResult:
@@ -918,7 +918,7 @@ class DecodingTask:
             [t[self.sample_begin : (t == tokenizer.eot).nonzero()[0, 0]] for t in s]
             for s in tokens
         ]
-        if self.options.nbest:
+        if self.options.return_nbest:
             n_best = 10
             # Select all candidates for each group
             # selected_candidates = self.sequence_ranker.rank(tokens, sum_logprobs)
